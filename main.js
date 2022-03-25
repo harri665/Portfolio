@@ -5,10 +5,14 @@
 	import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 	import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 	import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js';
-	  
 	  		//Regular Code 
 			document.body.onscroll = function(){Scrolling()};
 	  		var HoldingDiv = document.getElementById("_3DMain"); 
+			  window.addEventListener("load", function(){
+				//document.getElementById("loading").style.visibility = "hidden"; 
+				//document.getElementById("effect").style.visibility = "visible"; 
+				
+			});
 
 
 			let camera, scene, renderer;
@@ -56,6 +60,8 @@
 							robot.translateZ(5);
 							scene.add( robot );
 							render();
+							document.getElementById("loading").style.visibility = "hidden"; 
+							document.getElementById("effect").style.visibility = "visible"; 
 
 						} );
 
