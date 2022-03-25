@@ -138,6 +138,7 @@
 				rotaterobot = false; 
 				robot.rotation.y = scrollPosition/100;
 				document.getElementById("projects").style.visibility = "hidden"; 
+				document.getElementById("down").style.visibility = "visible";
 			}
 			function Anim1() {
 				rotaterobot = true; 
@@ -146,7 +147,7 @@
 				//robot.position.y = 0; 
 				//robot.position.z = 0; 
 				robot.position.z = -2; 
-
+				document.getElementById("down").style.visibility = "hidden";
 				document.getElementById("projects").style.visibility = "visible"; 
 				
 			}
