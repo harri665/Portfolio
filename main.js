@@ -5,6 +5,8 @@
 	import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 	import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 	import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js';
+	const extract = require('extract-zip')
+
 	  		//Regular Code 
 			document.body.onscroll = function(){Scrolling()};
 	  		var HoldingDiv = document.getElementById("_3DMain"); 
@@ -138,7 +140,8 @@
 				rotaterobot = false; 
 				robot.rotation.y = scrollPosition/100;
 				document.getElementById("projects").style.visibility = "hidden"; 
-				document.getElementById("down").style.visibility = "visible";
+				//document.getElementById("down").style.visibility = "visible";
+				document.getElementById("down").style.visibility = 100; 
 			}
 			function Anim1() {
 				rotaterobot = true; 
@@ -147,7 +150,8 @@
 				//robot.position.y = 0; 
 				//robot.position.z = 0; 
 				robot.position.z = -2; 
-				document.getElementById("down").style.visibility = "hidden";
+				//document.getElementById("down").style.visibility = "hidden";
+				document.getElementById("down").style.opacity = 0; 
 				document.getElementById("projects").style.visibility = "visible"; 
 				
 			}
