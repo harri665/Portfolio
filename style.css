@@ -520,5 +520,6 @@ transform: translate(95vw,90vh);
   width: 100%;
   text-align: center;
   color:white; 
-  visibility: visible;
+  opacity: 100%;
+  transition: opac;
 }
