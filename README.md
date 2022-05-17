@@ -30,8 +30,8 @@
         </li> 
         ```
         ``
-            <link type="text/css" rel="stylesheet" href="./style.css">
-            <link type = "text/css" rel = "stylesheet" href = "https://raw.githubusercontent.com/harri665/vite-project/main/style.css">
+            <!-- <link type="text/css" rel="stylesheet" href="./style.css"> -->
+            <link type = "text/css" ref = "stylesheet" href = "url(https://harrison-martin.surge.sh/assets/style.b77f6208.css)">
             <li class = "project">
                 <div class="container">
                     <button class = "PreviewButton" id="RefName">
