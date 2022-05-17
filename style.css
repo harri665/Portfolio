@@ -2,15 +2,87 @@ body {
   border:0; 
   margin:0; 
   font-family: Arial, sans-serif;
-  background-color: black;
-  
+  height: 100vh;
+  font-weight: 100;
+
+  background: linear-gradient(to right, black,#2c3b3a,#1b2423,#2c3b3a,black); 
+  background: linear-gradient(to right,#003c50,#000f14,black); 
+  background: linear-gradient(to right, rgb(100, 40, 0),rgb(80, 52, 0), black ); 
+  background: black ; 
+  -webkit-animation: fadeIn 1 1s ease-out;
+  -moz-animation: fadeIn 1 1s ease-out;
+  -o-animation: fadeIn 1 1s ease-out;
+  animation: fadeIn 1 1s ease-out;
+  transition:  background-color 0.5s ease;
 
 }
+
+#splat {
+  width:auto; 
+  height: 100%;
+  max-height: 100%;
+  right:0%;
+  position: absolute; 
+  top:0;
+  z-index: -2;
+
+}
+#splat1 {
+  width:auto; 
+  height:100%; 
+  max-height:100%;
+  right:0; 
+  position: absolute;
+  top:100%; 
+  transform: scaley(-1);
+  z-index: -2;
+}
+
+
+
+html{
+  width:100%;
+  height: 100%;
+  overflow-x: hidden;
+
+}
+
+#info {
+  position: absolute;
+  top:10%; 
+}
+.title{ 
+  font-weight: 900;
+  font-size:10em;
+  background: url("/Projects/Icons/Space.jpg") repeat;
+  background-position: 40% 50%;
+  -webkit-background-clip: text;
+  top:30%; 
+  left:-100%; 
+  text-align:left;
+  color:transparent;
+  max-height: 100%;
+  opacity: 100%;
+  text-align: center;  
+  filter:saturate(2);
+  transition: 1s;
+}
+
+.subtitle{
+  font-weight: 800;
+  color: white;
+  font-size:2em;
+  padding: 0;
+  top:calc(30% + 25%); 
+
+  text-align:center;
+}
+
 #_3DMain {
   position:fixed; 
   display:block; 
   right:0; 
-  z-index:-1; 
+  z-index:-2; 
   top:0; 
 }
 #navbar {
@@ -22,26 +94,42 @@ body {
    
   color:white; 
   z-index:9999999999999;
-  background-color: rgb(37, 37, 37);
   
-}
-#navbar h1 {
-  padding-left:1em; 
-  font-size: 3em;
-  background-color: rgb(46, 46, 46);
-  padding-top:.5em; 
-  padding-bottom: .2em;
 }
 #navbar p {
   font-weight: bold;
   padding-left:1em; 
 }
-#navbar img {
-  width: 20%;
+#socials img {
+  
+  width:auto;
+  max-width: 25%;
+  margin:0 auto; 
+  max-height: 10vh;
   height: auto;
-  padding:0; 
-  margin:0;
-  border:0; 
+  border-color: white; 
+  float:right; 
+}
+#socials img:hover {
+  opacity: 1;
+  filter:sepia(1) hue-rotate() invert() brightness(1.5);
+  
+  transition: 1s;
+}
+#socials {
+  width:75%; 
+  margin:0 auto; 
+  position: relative;
+  bottom:0; 
+  z-index: 1;
+  right:0; 
+  
+  
+  
+}
+
+a:visited {
+  text-decoration: none;
 }
 
 
@@ -61,6 +149,7 @@ body {
   border-radius: 1em;
   border-style: solid;
   border-color: white;
+  text-align: center;
 
 }
 
@@ -86,7 +175,7 @@ body {
   opacity: 0;
   transition: .5s ease;
   border-radius: 1em;
-  background-color: #008CBA;
+  background: linear-gradient(to right,#008CBA,transparent); 
   
   
 }
@@ -114,52 +203,24 @@ body {
 .project {
  width: 100%;
  margin-bottom:2em; 
+ list-style-type: none;
 }
 #projects {
   width:35%; 
+  padding-bottom: 25%;
+}
+.project button {
+  padding:0; 
+  margin:0; 
+  border:0; 
+  background-color: transparent;
+  cursor:pointer; 
 }
 
 
 
-body {
-  margin: 0;
-  height: 100vh;
-  font-weight: 100;
-  background: radial-gradient(#1a2931,#1f1013);
-  -webkit-animation: fadeIn 1 1s ease-out;
-  -moz-animation: fadeIn 1 1s ease-out;
-  -o-animation: fadeIn 1 1s ease-out;
-  animation: fadeIn 1 1s ease-out;
-}
 
-button{
-position: absolute;
-border: 2px solid white;
-background: transparent;
-font-family: 'Roboto', sans-serif;
-color: white;
-width: 250px;
-height: 50px;
-font-size: 2em;
-border-radius: 5px;
-opacity: .5;
-top: 60vh;
-bottom: 0px;
-left: 0px;
-right: 0px;
-margin: auto;
-transition: .3s;
-}
 
-button:hover{
-border: 2px solid #104F55;
-background-color: rgba(365,365,365,0.5);
-cursor: pointer;
-color: #104F55;
-opacity: .8;
-transition: .3s;
-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
 
 .light {
   position: absolute;
@@ -484,13 +545,30 @@ transform: translate(95vw,90vh);
   color:white; 
   z-index: 99999;
 }
+@keyframes loadinganim {
+  0%{background-position-y:-100%;}
+  100%{background-position-y:0%;}
+
+  }
+@keyframes infiniteLoad {
+  0%{background-position-x: 200%;}
+  
+  100%{background-position-x: -200%;}
+
+}
 #loading p {
   font-weight: 900;
   text-align: center;
-  font-size: 10em;
+  font-size: 10vw;
   padding:0; 
   border:0; 
   margin:0; 
+  background: url("https://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg") repeat-x;
+  -webkit-background-clip: text;
+  color:transparent;
+  animation: loadinganim 2s linear 0s 2;
+  animation: infiniteLoad 8s linear 0s infinite;
+  
 
 }
 
@@ -508,7 +586,7 @@ transform: translate(95vw,90vh);
   top:0; 
   color:white;
   font-weight: 900;
-  z-index: 99999999999999999999999999999999999;
+  z-index: 99999;
   opacity: 65%; 
 
 }
@@ -521,5 +599,356 @@ transform: translate(95vw,90vh);
   text-align: center;
   color:white; 
   opacity: 100%;
-  transition: opac;
+  transition: 1s;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#topbar {
+  width:100%; 
+  color:white; 
+  background-color: rgb(34, 34, 34);
+  position: fixed;
+  top:0; 
+  z-index: 4;
+  transition: .2s;
+}
+#topbar h1 {
+  padding:0; 
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+  font-size: 2em;
+  width:100%;
+  text-align: center;
+  position: fixed;
+  margin:0; 
+  border-top:0; 
+  border-left:0; 
+  border-right:0; 
+  border-bottom: 10px;
+  border-style: solid;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  background-color: rgb(34, 34, 34);
+  font-weight: 10000;
+  transition:border-bottom .2s; 
+}
+
+#topbar button{
+  border: 2px solid white;
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  width: 250px;
+  height: 50px;
+  font-size: 2em;
+  border-radius: 5px;
+  opacity: .5;
+  margin: auto;
+  transition: .3s;
+  }
+  
+  #topbar button:hover{
+    border: 2px solid #104F55;
+    background-color: rgba(365,365,365,0.5);
+    cursor: pointer;
+    color: #104F55;
+    opacity: .8;
+    transition: .3s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  #main {
+    display:block;
+    position: relative;
+    color:white; 
+    top:10em; 
+    width:100%; 
+    margin:0 auto; 
+    text-align: center;
+    list-style-type: none;
+    height:100%; 
+  }
+  #main p {
+    font-size: 3em;
+  }
+  #main ul {
+    list-style-position: inside;
+    width:100%; 
+    margin:0; 
+    padding:0; 
+    border:0; 
+  }
+  #main img {
+    display: block;
+    width:auto;
+    max-width: 90%;
+    margin:0 auto; 
+    max-height: 80vh;
+    height: auto;
+    border-radius:1em; 
+    border: 0em;
+    border-color: white;
+    transition:2s; 
+  }
+  #main img:hover {
+    border-top:0; 
+    border-left:0; 
+    border-right:0; 
+    border-bottom: 10px;
+    border-style: solid;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    border-color:rgba(255, 255, 255, 0.527); 
+    transition: border-bottom .2s ;
+    cursor:pointer;
+    
+  }
+
+
+  #main button {
+    background-color: transparent;
+    border:0; 
+    padding:0; 
+    margin:0;
+    cursor:pointer; 
+  }
+  #main a {
+    color:white; 
+
+  }
+  #main a:visited {
+    color:white; 
+  }
+
+  #left,#right {
+     
+    padding:0; 
+    float:left;
+    margin:0; 
+    display:block; 
+    max-height: 100%;
+  }
+  #left {
+    width:75%; 
+  }
+  #right {
+    width:25%; 
+  }
+  
+  #main p {
+    padding:0; 
+    margin:0; 
+    font-size: 1em;
+  }
+  #main h1 {
+
+  }
+  .breakdownbackground { 
+    position: absolute;
+    left:0; 
+    width:100%; 
+    height:200%; 
+    z-index: -4;
+  }
+  .breakdownbackground #top, .breakdownbackground #bottom {
+    width: 100%;
+    height:auto; 
+    transform:scaleX(-1);
+    z-index: -3;
+    margin:0; 
+    padding:0; 
+    border:0; 
+    display:block;
+
+
+  }
+  .breakdownbackground #top {
+
+  }
+  .breakdownbackground #bottom {
+    transform:scaleY(-1) scalex(-1); 
+
+  }
+
+  #breakdown ul {
+    text-align: center;
+  }
+  #breakdown div {
+    display: block;
+    max-width: 90%;
+    width:auto; 
+    margin: 0 auto; 
+    max-height: 100%;
+    height: auto;
+    border-radius:1em; 
+    border: 0em;
+    border-color: white;
+    
+  }
+#ScrollAnywhere {
+  position: fixed;
+  z-index: -1;
+  top:0; 
+  left:0; 
+  width: 100%;
+  height: 100%;
+  margin:0; 
+  border:0; 
+
+}
+
+
+
+#breakdown img {
+  display: block;
+  max-width: 90%;
+  margin:0 auto; 
+  max-height: 100vh;
+  height: auto;
+  border-radius:1em; 
+  border: 0em;
+  border-color: white;
+}
+#breakdown img:hover {
+  border-top:0; 
+  border-left:0; 
+  border-right:0; 
+  border-bottom: 10px;
+  border-style: solid;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border-color:rgba(255, 255, 255, 0.527); 
+  transition: border-bottom .2s ;
+  cursor: pointer;
+  
+  
+}
+
+#breakdown ul {
+  list-style-type:none;
+  padding:0; 
+  margin:0; 
+  border:0; 
+  text-align: center;
+}
+#breakdown li {
+  width:100%; 
+  color:white; 
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(100%);
+    opacity: 0%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    transform: translateY(0);
+    
+  }
+}
+#ShowCase {
+  animation: .5s ease-out 0s 1 slideInFromLeft;
+  width:100%; 
+  height: 100%;
+  height: -webkit-calc(100% - 50px);
+  height: -moz-calc(100% - 50px);
+  height: calc(100% - 50px);
+  position:fixed; 
+  top:50px;
+  left:0; 
+  border:0; 
+  margin:0; 
+  padding:0; 
+  z-index:3; 
+}
+
+
+
+
+#programsused {
+  width:100%; 
+  text-align: center;
+  color:white; 
+  list-style-type: none;
+  border:0; 
+  padding:0; 
+  margin-top:10em; 
+}
+#programused ul {
+  text-align: center; 
+}
+#programsused img {
+  width:10%; 
+  cursor: pointer;
+  float:center; 
+}
+@keyframes fullscreenanim {
+  0% {
+    transform:scale(.1);
+    top:100%; 
+    opacity: 0%;
+  }
+  100% {
+    transform: scale(1);
+    top:0%;
+    opacity: 100%; 
+  }
+
+};
+@keyframes fadein {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.911);
+  }
+  
+}
+
+#fullscreen {
+  position: fixed;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:100%;
+  top:0; 
+  left:0; 
+  background-color: rgba(0, 0, 0, 0.911);
+  z-index:999999; 
+  transition: 2s;
+  animation: fadein 2s linear 0s 1;
+  
+  
+
+}
+#fullscreen img{
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  transition: 2s;
+  opacity: "0";
+  position: fixed;
+  animation: fullscreenanim .4s linear 0s 1 ;
 }

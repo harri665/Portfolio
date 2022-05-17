@@ -11,7 +11,11 @@
     "vite": "^2.8.0"
   },
   "dependencies": {
+    "draco3d": "^1.5.2",
     "extract-zip": "^2.0.1",
-    "surge": "^0.23.1"
+    "jquery": "^3.6.0",
+    "requirejs": "^2.3.6",
+    "surge": "^0.23.1",
+    "unzipit": "^1.4.0"
   }
 }
