@@ -31,6 +31,7 @@
         ```
         ``
             <link type="text/css" rel="stylesheet" href="./style.css">
+            <link type = "text/css" rel = "stylesheet" href = "https://raw.githubusercontent.com/harri665/vite-project/main/style.css">
             <li class = "project">
                 <div class="container">
                     <button class = "PreviewButton" id="RefName">
