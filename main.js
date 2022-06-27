@@ -102,7 +102,7 @@
 				//dracoLoader.setDecoderPath('/node_modules/draco3d/');
 				dracoLoader.setDecoderConfig({ type: 'js' });
 				dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
-				const loader = new GLTFLoader().setPath( '/Models/FilmRobot/' );
+				const loader = new GLTFLoader().setPath( 'Models/FilmRobot/' );
 				loader.setDRACOLoader(dracoLoader);	
 
 				loader.load( 'FilmRobot.glb', function ( gltf ) {
