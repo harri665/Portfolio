@@ -913,7 +913,7 @@ transform: translate(95vw,90vh);
     opacity: 100%; 
   }
 
-};
+}
 @keyframes fadein {
   0% {
     background-color: rgba(0, 0, 0, 0);
